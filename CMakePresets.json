@@ -1,0 +1,120 @@
+{
+    "version": 10,
+    "cmakeMinimumRequired": {
+      "major": 3,
+      "minor": 16,
+      "patch": 0
+    },
+    "configurePresets": [
+        {
+            "name": "default",
+            "hidden": false,
+            "description": "My preset",
+            "generator": "Unix Makefiles",
+            "binaryDir": "${sourceDir}/build",
+            "environment": {},
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE": "RelWithDebInfo",
+                "BUILD_APCUPSD": "ON",
+                "BUILD_ARGB": "ON",
+                "BUILD_AUDACIOUS": "OFF",
+                "BUILD_BUILTIN_CONFIG": "ON",
+                "BUILD_CMUS": "ON",
+                "BUILD_COLOUR_NAME_MAP": "ON",
+                "BUILD_CURL": "ON",
+                "BUILD_DOCS": "OFF",
+                "BUILD_EXTRAS": "ON",
+                "BUILD_HDDTEMP": "ON",
+                "BUILD_HTTP": "ON",
+                "BUILD_I18N": "ON",
+                "BUILD_IBM": "ON",
+                "BUILD_ICAL": "OFF",
+                "BUILD_ICONV": "ON",
+                "BUILD_IMLIB2": "ON",
+                "BUILD_INTEL_BACKLIGHT": "OFF",
+                "BUILD_IOSTATS": "ON",
+                "BUILD_IPV6": "ON",
+                "BUILD_IRC": "OFF",
+                "BUILD_JOURNAL": "ON",
+                "BUILD_LUA_CAIRO": "ON",
+                "BUILD_LUA_CAIRO_XLIB": "false",
+                "BUILD_LUA_IMLIB2": "ON",
+                "BUILD_LUA_RSVG": "ON",
+                "BUILD_MATH": "ON",
+                "BUILD_MOC": "OFF",
+                "BUILD_MOUSE_EVENTS": "ON",
+                "BUILD_MPD": "OFF",
+                "BUILD_MYSQL": "OFF",
+                "BUILD_NCURSES": "ON",
+                "BUILD_NVIDIA": "OFF",
+                "BUILD_OLD_CONFIG": "OFF",
+                "BUILD_OPENSOUNDSYS": "ON",
+                "BUILD_PORT_MONITORS": "ON",
+                "BUILD_PULSEAUDIO": "ON",
+                "BUILD_RSS": "false",
+                "BUILD_WAYLAND": "ON",
+                "BUILD_WLAN": "OFF",
+                "BUILD_X11": "OFF",
+                "BUILD_XDAMAGE": "OFF",
+                "BUILD_XDBE": "OFF",
+                "BUILD_XFIXES": "OFF",
+                "BUILD_XFT": "OFF",
+                "BUILD_XINERAMA": "OFF",
+                "BUILD_XINPUT": "OFF",
+                "BUILD_XMMS2": "OFF",
+                "BUILD_XSHAPE": "OFF",
+                "CHECK_CODE_QUALITY": "OFF",
+                "CMAKE_INSTALL_PREFIX": "/usr/local",
+                "CODE_COVERAGE": "OFF",
+                "CONFIG_FILE": "$HOME/.conkyrc",
+                "CURSES_INCLUDE_PATH": "/usr/include",
+                "CURSES_LIBRARY": "/usr/lib/libcurses.so",
+                "DEFAULTNETDEV": "wlan0",
+                "DEFAULT_TEXT_BUFFER_SIZE": "256",
+                "ENABLE_STRICT_ALIASING": "true",
+                "HTTPPORT": "10085",
+                "IF_INET6": "/proc/net/if_inet6",
+                "LEAKFREE_NCURSES": "OFF",
+                "LOCALE_DIR": "/usr/local/share/locale",
+                "MAINTAINER_MODE": "OFF",
+                "MAX_NET_INTERFACES": "256",
+                "MAX_USER_TEXT_DEFAULT": "16384",
+                "OWN_WINDOW": "ON",
+                "PACKAGE_LIBRARY_DIR": "/usr/local/lib/conky",
+                "SYSTEM_CONFIG_FILE": "/etc/conky/conky.conf",
+                "TARGET_ARCHITECTURE": "auto",
+                "USE_CCACHE": "OFF",
+                "USE_LIBMVEC": "OFF",
+                "Vc_LIB_MVEC": "/usr/lib/libmvec.so",
+                "X11_xcb_xkb_INCLUDE_PATH": "/usr/include",
+                "XDG_CONFIG_FILE": "$HOME/.config/conky/conky.conf"
+            }
+        }
+    ],
+    "buildPresets": [
+    {
+      "name": "default",
+      "description": "local kein's build preset",
+      "configurePreset": "default",
+      "cleanFirst": true,
+      "targets": ["all"],
+      "inheritConfigureEnvironment": true,
+      "jobs": 8
+    }
+  ],
+  "workflowPresets": [
+    {
+      "name": "default",
+      "steps": [
+        {
+          "type": "configure",
+          "name": "default"
+        },
+        {
+          "type": "build",
+          "name": "default"
+        }
+      ]
+    }
+  ]
+}
